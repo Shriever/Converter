@@ -67,9 +67,10 @@ const AccordionDetails = withStyles(theme => ({
 
 // const sections = ["Currency", "Mass", "Duration"];
 const sections = [
-  { title: "Currency", links: ["USD > ISL", "USD > PDF", "GFF > TSM"] },
+  { title: "Temperature", links: ["USD > ISL", "USD > PDF", "GFF > TSM"] },
   { title: "Mass", links: ["USD > ISL", "USD > PDF", "GFF > TSM"] },
   { title: "Duration", links: ["USD > ISL", "USD > PDF", "GFF > TSM"] },
+  { title: "Speed", links: ["USD > ISL", "USD > PDF", "GFF > TSM"] },
   { title: "Length", links: ["USD > ISL", "USD > PDF", "GFF > TSM"] },
 ];
 

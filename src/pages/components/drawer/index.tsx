@@ -117,7 +117,7 @@ export default function PersistentDrawerLeft() {
         })}
       >
         <Toolbar className={classes.flex}>
-          <div style={{display: 'flex', alignItems: 'center'}}>
+          <div style={{ display: "flex", alignItems: "center" }}>
             <IconButton
               color='inherit'
               aria-label='open drawer'
@@ -151,6 +151,7 @@ export default function PersistentDrawerLeft() {
         }}
       >
         <div className={classes.drawerHeader}>
+            <Typography variant="h4">Presets</Typography>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "ltr" ? (
               <ChevronLeftIcon />
