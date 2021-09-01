@@ -7,25 +7,20 @@ import {
   createStyles,
 } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import List from "@material-ui/core/List";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
 
 import Accordion from "../accordion";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import { LinkedIn } from "@material-ui/icons";
 
-const drawerWidth = 240;
+const drawerWidth = 320;
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -83,13 +78,26 @@ const useStyles = makeStyles((theme: Theme) =>
       }),
       marginLeft: 0,
     },
+    icon: {
+      color: "#000",
+      margin: "0 5px",
+      fontSize: "30px",
+      transition: "0.5s",
+      "&:hover": {
+          color: "#111"
+      }
+    },
+    flex: {
+      display: "flex",
+      justifyContent: "space-between",
+    },
   })
 );
 
 export default function PersistentDrawerLeft() {
   const classes = useStyles();
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -101,14 +109,13 @@ export default function PersistentDrawerLeft() {
 
   return (
     <div className={classes.root}>
-      <CssBaseline />
       <AppBar
         position='fixed'
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
       >
-        <Toolbar>
+        <Toolbar className={classes.flex}>
           <IconButton
             color='inherit'
             aria-label='open drawer'
@@ -119,8 +126,16 @@ export default function PersistentDrawerLeft() {
             <MenuIcon />
           </IconButton>
           <Typography variant='h6' noWrap>
-            Persistent drawer
+            MyToolkit
           </Typography>
+          <div>
+            <a href='www.github.com/Shriever' target='_blank' rel='noreferrer'>
+              <LinkedIn className={classes.icon} />
+            </a>
+            <a href='www.github.com/Shriever' target='_blank' rel='noreferrer'>
+              <GitHubIcon className={classes.icon} />
+            </a>
+          </div>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -142,31 +157,7 @@ export default function PersistentDrawerLeft() {
           </IconButton>
         </div>
         <Divider />
-        <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          <Accordion />;
-        </List>
+        <Accordion />;
       </Drawer>
       <main
         className={clsx(classes.content, {
