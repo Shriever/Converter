@@ -15,10 +15,10 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
 
 import Accordion from "../accordion";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import { LinkedIn } from "@material-ui/icons";
 
 const drawerWidth = 320;
 
@@ -84,12 +84,13 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: "30px",
       transition: "0.5s",
       "&:hover": {
-          color: "#111"
-      }
+        color: "#111",
+      },
     },
     flex: {
       display: "flex",
       justifyContent: "space-between",
+      alignItems: "center",
     },
   })
 );
@@ -116,21 +117,23 @@ export default function PersistentDrawerLeft() {
         })}
       >
         <Toolbar className={classes.flex}>
-          <IconButton
-            color='inherit'
-            aria-label='open drawer'
-            onClick={handleDrawerOpen}
-            edge='start'
-            className={clsx(classes.menuButton, open && classes.hide)}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant='h6' noWrap>
-            MyToolkit
-          </Typography>
+          <div style={{display: 'flex', alignItems: 'center'}}>
+            <IconButton
+              color='inherit'
+              aria-label='open drawer'
+              onClick={handleDrawerOpen}
+              edge='start'
+              className={clsx(classes.menuButton, open && classes.hide)}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant='h6' noWrap>
+              MyToolkit
+            </Typography>
+          </div>
           <div>
             <a href='www.github.com/Shriever' target='_blank' rel='noreferrer'>
-              <LinkedIn className={classes.icon} />
+              <LinkedInIcon className={classes.icon} />
             </a>
             <a href='www.github.com/Shriever' target='_blank' rel='noreferrer'>
               <GitHubIcon className={classes.icon} />
