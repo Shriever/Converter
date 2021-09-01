@@ -4,7 +4,8 @@ import { Grid, makeStyles, Theme, createStyles } from "@material-ui/core";
 const useStyles = makeStyles((theme: Theme) => {
   return createStyles({
     root: {
-        marginTop: '20px'
+      marginTop: "20px",
+      width: "auto",
     },
     input: {
       textAlign: "center",
@@ -16,7 +17,6 @@ const useStyles = makeStyles((theme: Theme) => {
       borderBottomLeftRadius: 0,
       borderBottomRightRadius: 0,
       height: "52px",
-      //   lineHeight: '52px',
       fontSize: "28px",
       fontFamily: "helvetica",
       width: "100%",
@@ -24,6 +24,9 @@ const useStyles = makeStyles((theme: Theme) => {
     shadow: {
       boxShadow: "1px 1px 5px 0 #e5e5e5",
       width: "212px",
+      [theme.breakpoints.down("xs")]: {
+        margin: "5px",
+      },
     },
     select: {
       width: "100%",
@@ -44,20 +47,29 @@ const useStyles = makeStyles((theme: Theme) => {
       marginBottom: "15px",
       border: "1px #e6e6e6 solid",
       backgroundColor: "#fff",
-      padding:'7px',
-      borderRadius: '4px'
+      padding: "7px",
+      borderRadius: "4px",
     },
     equal: {
-        fontSize: '25px',
-        padding: '0 15px'
-    }
+      fontSize: "25px",
+      padding: "0 15px",
+      textAlign: "center",
+      [theme.breakpoints.down("xs")]: {
+        display: "none",
+      },
+    },
   });
 });
 
 const Converter = () => {
   const classes = useStyles();
   return (
-    <Grid container justifyContent='center' alignItems='center' className={classes.root}>
+    <Grid
+      container
+      justifyContent='center'
+      alignItems='center'
+      className={classes.root}
+    >
       <Grid item>
         <select className={classes.type}>
           <option value='type'>Temperature</option>
