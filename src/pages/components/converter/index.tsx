@@ -44,7 +44,8 @@ const useStyles = makeStyles((theme: Theme) => {
       marginBottom: "15px",
       border: "1px #e6e6e6 solid",
       backgroundColor: "#fff",
-      padding:'7px'
+      padding:'7px',
+      borderRadius: '4px'
     },
     equal: {
         fontSize: '25px',

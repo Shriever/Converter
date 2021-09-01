@@ -132,7 +132,11 @@ export default function PersistentDrawerLeft() {
             </Typography>
           </div>
           <div>
-            <a href='www.github.com/Shriever' target='_blank' rel='noreferrer'>
+            <a
+              href='https://www.linkedin.com/in/levi-lieberman-b80960108/'
+              target='_blank'
+              rel='noreferrer'
+            >
               <LinkedInIcon className={classes.icon} />
             </a>
             <a href='www.github.com/Shriever' target='_blank' rel='noreferrer'>
@@ -151,7 +155,7 @@ export default function PersistentDrawerLeft() {
         }}
       >
         <div className={classes.drawerHeader}>
-            <Typography variant="h4">Presets</Typography>
+          <Typography variant='h4'>Presets</Typography>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "ltr" ? (
               <ChevronLeftIcon />
