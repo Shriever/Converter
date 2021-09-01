@@ -3,5 +3,9 @@ module.exports = {
     siteUrl: "https://www.yourdomain.tld",
     title: "Tools",
   },
-  plugins: ["gatsby-plugin-gatsby-cloud", "gatsby-plugin-react-helmet"],
+  plugins: [
+    "gatsby-plugin-gatsby-cloud",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-material-ui",
+  ],
 };
